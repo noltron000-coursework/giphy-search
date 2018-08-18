@@ -1,0 +1,19 @@
+{
+  "name": "gif-search",
+  "version": "1.0.0",
+  "description": "Make School gif-search project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noltron000/gif-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noltron000/gif-search/issues"
+  },
+  "homepage": "https://github.com/noltron000/gif-search#readme"
+}
