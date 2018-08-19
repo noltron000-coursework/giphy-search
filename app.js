@@ -2,8 +2,7 @@
 var exphbs	= require('express-handlebars');
 var express = require('express');
 var http = require('http');
-// REQUIRE GIPHY FOR LATER
-// var giphy = require('giphy-api')();
+var giphy = require('giphy-api')();
 
 // MISC DECLARATIONS SECOND
 var app = express();
@@ -14,19 +13,18 @@ app.set('view engine', 'handlebars');
 
 // APP.GET THINGS
 
-/* REFACTORED CODE
+// REFACTORED CODE
 app.get('/', function (req, res) {
 	var queryString = "funny cat";
-	if (req.query.term != "") {
+	if (req.query.term != "" && req.query.term != undefined) {
 		queryString = req.query.term;
 	};
-	giphy.search(req.query.term, function (err, response) {
+	giphy.search(queryString, function (err, response) {
 		res.render('home', {gifs: response.data})
 	});
 });
-*/
 
-// ORIGINAL CODE
+/* ORIGINAL CODE
 app.get('/', function (req, res) {
 
 	// IF NOTHING IS ENTERED THEN DEFAULT FUNNY CATS ELSE KEEP ENTRY TERM
@@ -61,6 +59,7 @@ app.get('/', function (req, res) {
 		});
 	});
 });
+*/
 
 app.listen(3000, function () {
 	console.log('Example app listening on port 3000!');
