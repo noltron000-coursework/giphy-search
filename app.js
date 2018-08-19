@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.get('/', function (req, res) {
 	var queryString = "funny cat";
 	if (req.query.term != "" && req.query.term != undefined && req.query.term != null) {
-		queryString = value.toString(req.query.term);
+		queryString = req.query.term.toString();
 	};
 	giphy.search(queryString, function (err, response) {
 		res.render('home', {gifs: response.data})
