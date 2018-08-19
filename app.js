@@ -10,14 +10,15 @@ var app = express();
 // APP.MISC THINGS
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.use(express.static('public'));
 
 // APP.GET THINGS
 
 // REFACTORED CODE
 app.get('/', function (req, res) {
 	var queryString = "funny cat";
-	if (req.query.term != "" && req.query.term != undefined) {
-		queryString = req.query.term;
+	if (req.query.term != "" && req.query.term != undefined && req.query.term != null) {
+		queryString = value.toString(req.query.term);
 	};
 	giphy.search(queryString, function (err, response) {
 		res.render('home', {gifs: response.data})
