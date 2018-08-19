@@ -1,19 +1,69 @@
-// app.js
-
-var exphbs  = require('express-handlebars');
+// REQUIREMENTS FIRST
+var exphbs	= require('express-handlebars');
 var express = require('express');
+var http = require('http');
+// REQUIRE GIPHY FOR LATER
+// var giphy = require('giphy-api')();
+
+// MISC DECLARATIONS SECOND
 var app = express();
 
+// APP.MISC THINGS
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.listen(3000, function () {
-	console.log('Example app listening on port 3000!');
+// APP.GET THINGS
+
+/* REFACTORED CODE
+app.get('/', function (req, res) {
+	var queryString = "funny cat";
+	if (req.query.term != "") {
+		queryString = req.query.term;
+	};
+	giphy.search(req.query.term, function (err, response) {
+		res.render('home', {gifs: response.data})
+	});
+});
+*/
+
+// ORIGINAL CODE
+app.get('/', function (req, res) {
+
+	// IF NOTHING IS ENTERED THEN DEFAULT FUNNY CATS ELSE KEEP ENTRY TERM
+	var queryString = "funny cat";
+	if (req.query.term != "" && req.query.term != undefined) {
+		queryString = req.query.term;
+	};
+
+	// ENCODE THE QUERY STRING TO REMOVE WHITE SPACES AND RESTRICTED CHARACTERS
+	var term = encodeURIComponent(queryString);
+
+	// PUT THE SEARCH TERM INTO THE GIPHY API SEARCH URL
+	var url = 'http://api.giphy.com/v1/gifs/search?q=' + term + '&api_key=dc6zaTOxFJmzC'
+	http.get(url, function(response) {
+
+		// SET ENCODING OF RESPONSE TO UTF8
+		response.setEncoding('utf8');
+		var body = '';
+		response.on('data', function(d) {
+
+			// CONTINUOUSLY UPDATE STREAM WITH DATA FROM GIPHY
+			body += d;
+		});
+
+		response.on('end', function() {
+
+			// WHEN DATA IS FULLY RECEIVED PARSE INTO JSON
+			var parsed = JSON.parse(body);
+
+			// RENDER THE HOME TEMPLATE AND PASS THE GIF DATA IN TO THE TEMPLATE
+			res.render('home', {gifs: parsed.data})
+		});
+	});
 });
 
-app.get('/', function (req, res) {
-	console.log(req.query)
-	res.render('home')
+app.listen(3000, function () {
+	console.log('Example app listening on port 3000!');
 });
 
 app.get('/hello-world', function (req, res) {
@@ -28,8 +78,4 @@ app.get('/hello-gif', function (req, res) {
 app.get('/greetings/:name', function (req, res) {
 	var name = req.params.name;
 	res.render('greetings', {name: name});
-});
-
-app.get('/?term=:term', function (req, res) {
-	res.render('term')
 });
