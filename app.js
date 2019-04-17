@@ -63,7 +63,7 @@ app.get('/', function (req, res) {
 */
 
 app.listen(3000, function () {
-	console.log('Example app listening on port 3000!');
+	console.log('Example app listening on port 3000!\nhttp://localhost:3000/');
 });
 
 app.get('/hello-world', function (req, res) {
