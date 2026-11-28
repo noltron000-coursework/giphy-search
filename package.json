@@ -1,18 +1,18 @@
 {
-	"name": "gif-search",
+	"name": "giphy-search",
 	"private": false,
 	"license": "ISC",
 	"version": "2.0.0",
-	"description": "Make School gif-search project",
+	"description": "Make School giphy-search project",
 	"keywords": [],
-	"homepage": "https://projects.nebuloid.dev/gif-search/",
+	"homepage": "https://projects.nebuloid.dev/giphy-search/",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/noltron000/gif-search.git"
+		"url": "git+https://github.com/noltron000/giphy-search.git"
 	},
 	"bugs": {
 		"email": "noltron000@gmail.com",
-		"url": "https://github.com/noltron000/gif-search/issues"
+		"url": "https://github.com/noltron000/giphy-search/issues"
 	},
 	"author": {
 		"name": "Nolan Kovacik",
