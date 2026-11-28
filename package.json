@@ -20,10 +20,10 @@
 		"url": "https://nebuloid.dev/"
 	},
 	"type": "commonjs",
-	"main": "app.js",
+	"main": "source/app.js",
 	"files": [],
 	"scripts": {
-		"start": "node app.js",
+		"start": "node source/app.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
