@@ -1,25 +1,35 @@
 {
-	"name": "gif-search",
-	"version": "1.0.0",
-	"description": "Make School gif-search project",
-	"main": "app.js",
-	"scripts": {
-		"start": "node app.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
+	"name": "giphy-search",
+	"private": false,
+	"license": "MIT",
+	"version": "2.0.0",
+	"description": "Make School giphy-search project",
+	"keywords": [],
+	"homepage": "https://projects.nebuloid.dev/giphy-search/",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/noltron000/gif-search.git"
+		"url": "git+https://github.com/noltron000/giphy-search.git"
 	},
-	"author": "",
-	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/noltron000/gif-search/issues"
+		"email": "noltron000@gmail.com",
+		"url": "https://github.com/noltron000/giphy-search/issues"
 	},
-	"homepage": "https://github.com/noltron000/gif-search#readme",
+	"author": {
+		"name": "Nolan Kovacik",
+		"email": "noltron000@gmail.com",
+		"url": "https://nebuloid.dev/"
+	},
+	"type": "commonjs",
+	"main": "source/app.js",
+	"files": [],
+	"scripts": {
+		"start": "node source/app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
 	"dependencies": {
-		"express": "^4.16.3",
-		"express-handlebars": "^3.0.0",
-		"giphy-api": "^1.2.7"
+		"express": "^5.3.0",
+		"express-handlebars": "^9.0.6",
+		"giphy-api": "^2.0.2",
+		"node": "^26.0.0"
 	}
 }

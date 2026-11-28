@@ -1,6 +1,8 @@
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+
 # Giphy Search Engine 🔍
 ***Introduction to API's in Backend Web***
-> This project was created at [Make School](https://github.com/MakeSchool), a modern and innovative college for future software engineers.  
+> This project was created at [Make School](https://github.com/MakeSchool), a modern and innovative college for future software engineers.
 > To learn more, visit their [website](http://make.sc).
 
 Giphy Search is [Live on Heroku](https://giphy-engine.herokuapp.com/)
