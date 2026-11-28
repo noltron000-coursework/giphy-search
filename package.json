@@ -18,8 +18,9 @@
 	},
 	"homepage": "https://github.com/noltron000/gif-search#readme",
 	"dependencies": {
-		"express": "^4.16.3",
-		"express-handlebars": "^3.0.0",
-		"giphy-api": "^1.2.7"
+		"express": "^5.3.0",
+		"express-handlebars": "^9.0.6",
+		"giphy-api": "^2.0.2",
+		"node": "^26.0.0"
 	}
 }
